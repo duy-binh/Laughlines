@@ -1,0 +1,28 @@
+{
+  "Products": [
+    {
+      "id": 1,
+      "name": "Player1",
+      "price": "19000",
+      "priceSale": "0",
+      "img": "sp5.webp",
+      "img1": "",
+      "img2": "",
+      "img3": "0",
+      "description": "sticker về player có thể là những hình dán thú vị và đa dạng, dùng để thể hiện sự yêu thích và đam mê đối với các cầu thủ thể thao hoặc nhân vật trong trò chơi điện tử. Chúng không chỉ là công cụ giao tiếp sinh động trong các cuộc trò chuyện mà còn là vật",
+      "id_danhmuc": 1
+    },
+    {
+      "id": 2,
+      "name": "Player2",
+      "price": "19000",
+      "priceSale": "0",
+      "img": "sp10.webp",
+      "img1": "",
+      "img2": "",
+      "img3": "0",
+      "description": "sticker về player có thể là những hình dán thú vị và đa dạng, dùng để thể hiện sự yêu thích và đam mê đối với các cầu thủ thể thao hoặc nhân vật trong trò chơi điện tử. Chúng không chỉ là công cụ giao tiếp sinh động trong các cuộc trò chuyện mà còn là vật",
+      "id_danhmuc": 1
+    }
+  ]
+}
