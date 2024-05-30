@@ -16,7 +16,7 @@ const connection = mysql.createConnection({
 // Kết nối với cơ sở dữ liệu
 connection.connect((err) => {
   if (err) throw err;
-  console.log('--------------------------------------------------------------------Kết Nối CSDL Thành Công!');
+  console.log('Kết Nối CSDL Thành Công!');
 });
 
 // Định nghĩa một API endpoint
@@ -35,5 +35,5 @@ app.get('/sale', (req, res) => {
 // Khởi động server
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`--------------------------------------------------------------------http://localhost:${port}`);
+  console.log(`http://localhost:${port}`);
 });

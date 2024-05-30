@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div class="main_checkout">
+        <div class="infomation">
+            <a href="index.html" class=""><img src="img/Capture.PNG" alt="logo" class="logo" width="300px"></a>
+            <div class="tab">
+               <ol><a href="cart.html">Giỏ Hàng</a> / Thanh Toán</ol> 
+            </div>
+            
+            <h2 class="font">Thông tin giao hàng</h2>
+            <p class="">Bạn đã có tài khoản ?  <a href="">Đăng Nhập</a></p>
+            <div class="check_form">
+                <input type="text" placeholder="Họ Và Tên" id="name">
+                <input type="email" placeholder="Email" id="email">
+                <input type="phone" placeholder="Số Điện Thoại" id="phone">
+                <input type="address" placeholder="Địa Chỉ" id="address">
+            </div>
+            <h2 class="font">Phương Thức Thanh Toán</h2>
+            <div class="select_pay">
+                <form action="">
+                    <label for="" class="radio_label">
+                        <input type="radio" name="payment" id="" value="Thanh Toán Sau Khi Nhận Hàng">
+                        <span class="">Thanh Toán Sau Khi Nhận Hàng</span>
+                    </label> <br>
+                    <label for="" class="radio_label">
+                        <input type="radio" name="payment" id="" value="Chuyển Khoản">
+                        <span class="">Chuyển Khoản</span>
+                    </label> <br>
+                    <label for="" class="radio_label">
+                        <input type="radio" name="payment" id="" value="Chuyển Khoản Bằng Cách Quét VietQR">
+                        <span class="">Chuyển Khoản Bằng Cách Quét VietQR</span>
+                    </label> <br>
+                    <button type="button">
+                        <span class="btn_check"><a href="bill.html">Hoàn Tất Đơn Hàng</a></span>
+                    </button> 
+                </form>
+            </div>
+            <hr>
+            <center><div class="byme"> <p>Copyright © 2024 <a href="index.html">LaughLines</a>. Powered by Dawn</p></div></center>
+        </div>
+        <div class="check_product">
+            <input type="hidden" id="count">
+                <table class="check_carttb">
+                    <tbody id="pro_cart">
+                        <tr>
+                            <td>Bất Ngờ Chưa Bà Già</td>
+                            <td><img src="img/sp1.webp" alt="" width="100px" height="auto"></td>
+                            <td>x 1 </td>
+                            <td>19,000 đ</td>
+                        </tr>
+                    </tbody> 
+                </table>     
+                <div class="sale_product">
+                    <input type="text" placeholder="Mã giảm giá">
+                    <button type="submit" class="">Sử dụng</button>   
+                </div>
+                <div class="cart_money">
+                    <p class="cart_sum">Tạm Tính<span id="sum_cart"></span></p>
+                    <p class="cart_sum">Phí Vận Chuyển<span id="sum_cart"></span></p>
+                    <hr class="hr2">
+                    <p class="cart_sum">Tổng Cộng<span id="sum_total"></span></p>
+                </div>
+        </div>
+    </div>
+</body>
+<script src="js/product.js"></script>
+<script>
+    // Lấy dữ liệu từ localStorage
+    var cartItems = localStorage.getItem("cart") || "[]";
+    var cart = JSON.parse(cartItems);
+    var sum = 0;
+    document.getElementById('pro_cart').innerHTML = Object.values(cart).map((item) => {
+        var { name, price, quantity, img } = item;
+        var quantity = item.quantity;
+        var totalPrice = item.totalPrice;
+        sum += totalPrice;
+        return (
+            `<tr>
+                <td>${name}</td>
+                <td><img src="${img}" alt="" width="70px" height="auto"></td>
+                <td>x ${quantity}</td>
+                <td>${price},000 đ</td>
+            </tr>`
+        );
+    }).join('');
+    console.log(sum);
+    console.log(cart);
+    console.log(cartItems);
+    document.getElementById('sum_cart').innerHTML = sum + " đ";
+    document.getElementById('sum_total').innerHTML = sum + " đ";
+</script>
+</html>

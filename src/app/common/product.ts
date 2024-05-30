@@ -2,11 +2,12 @@ export interface Products {
   id: number;
   name: string;
   img: string;
-  img_child: string;
+  img1: string;
+  img2: string;
+  img3: string;
   price: number;
-  sale: number;
+  priceSale: number;
   status:number;
-  views:number;
   description:string;
 
 }

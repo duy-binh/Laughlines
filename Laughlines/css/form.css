@@ -1,0 +1,36 @@
+.contact{
+    align-items: center;
+    text-align: center;
+    padding: 3%;
+}
+.contact h2{
+  color: rgb(255, 255, 255);
+}
+#contactForm {
+    width: 300px;
+    margin: 0 auto;
+    padding: 5%;
+    border: 1px solid rgb(173, 173, 173);
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  #contactForm label {
+    display: block;
+    margin-top: 20px;
+  }
+  
+  #contactForm input[type="text"],
+  #contactForm input[type="email"],
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+  }
+  
+  #contactForm input[type="submit"] {
+    margin-top: 20px;
+    padding: 3%;
+    background-color: #e0352f;
+    color: aliceblue;
+  }

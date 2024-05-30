@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaughLines</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="logo">
+                <a href="index.html"><img src="img/Capture.PNG" alt="Logo"></a>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Tìm Kiếm Tại Đây..." required>
+                <button type="submit"><img src="img/search.png" alt="" width="35px"></button>
+            </div>
+            <div class="phone">
+                <div>
+                    <i ><img src="img/phone.png" width="40px"></i> <br>
+                </div>
+                <div class="hotline">
+                    <b>HOTLINE</b>
+                    <em> 889020487</em>
+                </div>
+            </div>
+            <div class="login">
+                <a href="login.html">
+                    <img src="img/user.png" height="40px">
+                </a>
+            </div>
+            <div class="cart">
+                <a href="#">
+                    <img src="img/cart.jpg" height="40px" onclick="showcart()">
+                </a>
+                <p id="count">0</p>
+            </div>
+            <div class="show_cart" id="cart1">
+                <center>
+                    <h2>Giỏ Hàng Của Bạn</h2>
+                    <h3 id="cartItem"></h3>
+                </center>
+                <div class="cartdetail">
+                    <table>
+                        <tr>
+                            <th>Sản Phẩm</th>
+                            <th>Hình</th>
+                            <th>Số Lượng</th>
+                            <th>Giá</th>
+                            <th>Xóa</th>
+                        </tr>
+                        <tbody id="pro_cart" class="table_tbody">
+                            <tr>
+                                <td>Sticker 1</td>
+                                <td><img src="img/sp1.webp" alt="" width="100px" height="auto"></td>
+                                <td>1</td>
+                                <td>19,000 đ</td>
+                                <td><img src="img/delete.png" alt="" width="20px" height="auto"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="show_proCart">
+                    <p class="cart_sum"><b class="text_sum">Tổng Tiền:</b><span id="sum_cart"></span></p>
+                    <hr class="hr">
+                    <button class="view_cart" ><a href="cart.html" class="">CHI TIẾT GIỎ HÀNG</a></button><br> 
+                </div>
+                
+            </div>
+        </div>
+    </header>
+     <nav>
+        <ul>
+            <li><a href="index.html">TRANG CHỦ</a></li>
+            <li><a href="about.html">GIỚI THIỆU</a></li>
+            <li><a href="products.html">SẢN PHẨM</a></li>
+            <li><a href="contact.html">LIÊN HỆ & HỖ TRỢ</a></li>
+        </ul>
+    </nav>
+    <!-- <div class="tabmenu">
+        <ol>TRANG CHỦ / BẤT NGỜ CHƯA BÀ GIÀ</ol>
+    </div> -->
+   
+    <section id="pro_detail">
+        <div class="product-detail" >
+            <div class="img-pro">
+                <div>
+                    <div>
+                        <img src="img/sp1.webp" alt="" id="img">
+                    </div>
+                    <div>
+                        <img src="img/sp1.2.webp" alt="">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="img/sp1.1.webp" alt="">
+                    </div>
+                    <div>
+                        <img src="img/sp1.3.webp" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="info-product">
+                <h1 id="name">BẤT NGỜ CHƯA BÀ GIÀ</h1>
+                <hr>
+                <span id="price">19,000 đ</span>
+                <hr>
+                <i>Số Lượng : </i><input type="number" min="1" max="10" id="quantity" value="1"><br>
+                <button class=""><a href="cart.html"><b>THÊM VÀO GIỎ</b></a></button><br>
+                <h2>Thông Tin Sản Phẩm</h2>
+                <p>
+                    <ul>
+                        <li>Diecut sticker - sticker cắt rời bằng máy với kỹ thuật hiện đại nhất</li>
+                        <li>Chất liệu sticker vinyl chống thấm nước tuyệt đối</li>
+                    </ul>
+                </p>
+            </div>    
+        </div>
+    </section>
+    <section>
+                <center><h1>SẢN PHẨM QUAN TÂM</h1></center>
+                <div class="container" id="container">
+                    <div class="box">
+                        <a href="product-detail.html"><img src="img/sp1.webp" alt=""></a>
+                        <h3 id="name">BẤT NGỜ CHƯA BÀ GIÀ</h3> <br>
+                        <span id="price">19,000 đ</span><br>
+                        <div class="wrapper">
+                            <button id="addcart"><i class="far fa-shopping-basket"></i>THÊM VÀO GIỎ</button>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <a href="product-detail.html"><img src="img/sp1.webp" alt=""></a>
+                        <h3 id="name">BẤT NGỜ CHƯA BÀ GIÀ</h3> <br>
+                        <span id="price">19,000 đ</span><br>
+                        <div class="wrapper">
+                            <button id="addcart"><i class="far fa-shopping-basket"></i>THÊM VÀO GIỎ</button>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <a href="product-detail.html"><img src="img/sp1.webp" alt=""></a>
+                        <h3 id="name">BẤT NGỜ CHƯA BÀ GIÀ</h3> <br>
+                        <span id="price">19,000 đ</span><br>
+                        <div class="wrapper">
+                            <button id="addcart"><i class="far fa-shopping-basket"></i>THÊM VÀO GIỎ</button>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <a href="product-detail.html"><img src="img/sp1.webp" alt=""></a>
+                        <h3 id="name">BẤT NGỜ CHƯA BÀ GIÀ</h3> <br>
+                        <span id="price">19,000 đ</span><br>
+                        <div class="wrapper">
+                            <button id="addcart"><i class="far fa-shopping-basket"></i>THÊM VÀO GIỎ</button>
+                        </div>
+                    </div>
+                </div>
+    </section>       
+    <hr>
+    <footer class="footer-main">
+        <div class="logofooter">
+            <img src="img/Capture.PNG" alt=""> <br>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62705.160139741514!2d106.61678612127228!3d10.805758587537362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529292e8d3dd1%3A0xf15f5aad773c112b!2zVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1705230727825!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="info">
+            <ul>
+                <h3>LaughLines</h3>
+                <li>Trang Chủ</li>
+                <li>Giới Thiệu</li>
+                <li>Sản Phẩm</li>
+                <li>Liên Hệ & Hỗ Trợ</li>
+            </ul>
+        </div>
+        <div class="info">
+            <ul>
+                <h3>Về Chúng Tôi</h3>
+                <li>Thương Hiệu : LaughLines</li>
+                <li>Địa Chỉ : Q.Gò Vấp, TP.HCM</li>
+                <li>Hotline : 0889020487</li>
+                <li>Email : laughlines@gmail.com</li>
+            </ul>
+        </div>
+        <div class="info">
+            <ul>
+                <h3>Hỗ Trợ Khách Hàng</h3>
+                <li>Vận Chuyển Hàng</li>
+                <li>Thanh Toán Trực Tuyến</li>
+                <li>Bảo Mật Thông Tin</li>
+                <li>Thông Tin Sản Phẩm</li>
+            </ul>
+        </div>
+    </footer> 
+    <hr>
+        <div class="byme"> <p>Copyright © 2024 <a href="index.html">LaughLines</a>. Powered by Dawn</p></div>
+
+</body>
+<script src="js/product.js"></script>
+<script>
+    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        displayCart(cart);
+        const selectedProductId = localStorage.getItem('selectedProductId');
+        const selectedProduct = products.find(product => product.id === parseInt(selectedProductId));
+        console.log(selectedProduct);
+        document.getElementById("pro_detail").innerHTML = `
+            <div class="product-detail" id="${selectedProduct.id}">
+                <div class="img-pro">
+                    <div>
+                        <div>
+                            <img src="${selectedProduct.img}" alt="" id="img">
+                        </div>
+                        <div>
+                            <img src="${selectedProduct.img1}" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="${selectedProduct.img2}" alt="">
+                        </div>
+                        <div>
+                            <img src="${selectedProduct.img3}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="info-product">
+                    <h1 id="name">${selectedProduct.name}</h1>
+                    <hr>
+                    <span id="price">${selectedProduct.price},000 đ</span>
+                    <hr>
+                    <i>Số Lượng : </i><input type="number" min="1" max="10" id="quantity" value="${selectedProduct.quantity}"><br>
+                    <button onclick="addCart(${selectedProduct.id})">THÊM VÀO GIỎ</button><br>
+                    <h2>Thông Tin Sản Phẩm</h2>
+                    <p>
+                        <ul>
+                            <li>Diecut sticker - sticker cắt rời bằng máy với kỹ thuật hiện đại nhất</li>
+                            <li>Chất liệu sticker vinyl chống thấm nước tuyệt đối</li>
+                        </ul>
+                    </p>
+                </div>    
+            </div>
+        `;
+
+</script>
+</html>

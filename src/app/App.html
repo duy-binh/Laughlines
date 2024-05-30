@@ -1,123 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaughLines</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
-
 <body>
-  <div class="navbar  py-[35px] px-[10px] lg:px-20">
-    <!-- Mobile -->
-    <div class="navbar-start">
-      <div class="dropdown flex">
-        <!-- ------------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Swap -->
-        <label class="lg:hidden  btn btn-circle swap swap-rotate">
-          <!-- this hidden checkbox controls the state -->
-          <input type="checkbox" />
-          <!-- hamburger icon -->
-          <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-            viewBox="0 0 512 512">
-            <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
-          </svg>
-          <!-- close icon -->
-          <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-            viewBox="0 0 512 512">
-            <polygon
-              points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
-          </svg>
-        </label>
-        <!-- ------------------------------------------------------------------------------------------------------------------------------- -->
-        <ul class="z-[9999] menu menu-sm dropdown-content mt-3 p-5 shadow bg-base-100 rounded-box  w-52">
-          <li><a href="/">Trang Chủ</a></li>
-          <li>
-            <a href="/shop">Sản Phẩm</a>
-            <ul class="p-2">
-              <li><a href="">Trà Sữa</a></li>
-              <li><a href="">Nước Trái Cây</a></li>
-            </ul>
-          </li>
-          <li><a href="/about">Giới Thiệu</a></li>
-          <li><a href="/contact">Liên Hệ</a></li>
-        </ul>
-        <a href="/" class="hidden lg:flex btn btn-ghost text-xl justify-center w-full"><img
-            src="../assets/image/logo.webp" alt="Logo"></a>
-      </div>
-    </div>
-    <!-- Desktop  -->
-    <div class="navbar-center lg:hidden">
-      <a href="/" class="btn btn-ghost text-xl flex justify-center w-full"><img src="../assets/image/logo.webp"
-          alt="Logo"></a>
-    </div>
-    <div class="navbar-center hidden lg:flex">
-      <ul class="menu menu-horizontal px-1">
-        <li><a href="/" class="">Trang Chủ</a></li>
-        <li>
-          <details>
-            <summary><a href="/shop">Sản Phẩm</a></summary>
-            <ul class="p-2 z-50">
-              <li><a>Trà Sữa</a></li>
-              <li><a>Nước Trái Cây</a></li>
-            </ul>
-          </details>
-        </li>
-        <li><a href="/about">Giới Thiệu</a></li>
-        <li><a href="/contact">Liên Hệ</a></li>
-      </ul>
-    </div>
-    <div class="navbar-end space-x-5 hidden xl:flex">
-      <a href="/login" class="btn">
-        <i class="fa fa-user"></i>
-        Tài Khoản</a>
-      <a href="" class="btn">
-        <i class="fa fa-cart-shopping"></i>
-        Giỏ Hàng</a>
-    </div>
-    <div class="lg:hidden navbar-end">
-      <div class="avatar online flex ">
-        <div class="w-10 rounded-full">
-          <a href="/login">
-            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-          </a>
+
+    <header>
+        <div class="header">
+            <div class="logo">
+                <a href="index.html"><img src="./assets/products/Capture.PNG" alt="Logo"></a>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Tìm Kiếm Tại Đây..." required>
+                <button type="submit"><img src="./assets/products/search.png" alt="" width="35px"></button>
+            </div>
+            <div class="phone">
+                <div>
+                    <i ><img src="./assets/products/phone.png" width="40px"></i> <br>
+                </div>
+                <div class="hotline">
+                    <b>HOTLINE</b>
+                    <em> 889020487</em>
+                </div>
+            </div>
+            <div class="login">
+                <a href="login.html">
+                    <img src="./assets/products/user.png" height="40px">
+                </a>
+            </div>
+            <div class="cart">
+                <a href="#">
+                    <img src="./assets/products/cart.jpg" height="40px" onclick="showcart()">
+                </a>
+                <p id="count">0</p>
+            </div>
+            <div class="show_cart" id="cart1">
+                <!-- <center> -->
+                    <h2>Giỏ Hàng Của Bạn</h2>
+                    <h3 id="cartItem"></h3>
+                <!-- </center> -->
+                <div class="cartdetail">
+                    <table>
+                        <tr>
+                            <th>Sản Phẩm</th>
+                            <th>Hình</th>
+                            <th>Số Lượng</th>
+                            <th>Giá</th>
+                            <th>Xóa</th>
+                        </tr>
+                        <tbody id="pro_cart" class="table_tbody">
+                            <tr>
+                                <td>Sticker 1</td>
+                                <td><img src="./assets/products/sp1.webp" alt="" width="100px" height="auto"></td>
+                                <td>1</td>
+                                <td>19,000 đ</td>
+                                <td><img src="./assets/products/delete.png" alt="" width="20px" height="auto"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="show_proCart">
+                    <p class="cart_sum"><b class="text_sum">Tổng Tiền:</b><span id="sum_cart">19,000 đ</span></p>
+                    <hr class="hr">
+                    <button class="view_cart" ><a href="cart.html" class="">CHI TIẾT GIỎ HÀNG</a></button><br> 
+                </div>
+                
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- Body -->
-  <!-- ------------------------------------------------------------------------------------------------------------------------------- -->
+    </header>
+
+    <br>
+
+    <nav>
+        <ul>
+            <li><a href="/">TRANG CHỦ</a></li>
+            <li><a href="/about">GIỚI THIỆU</a></li>
+            <li><a href="/shop">SẢN PHẨM</a></li>
+            <li><a href="/contact">LIÊN HỆ & HỖ TRỢ</a></li>
+        </ul>
+    </nav>
+
   <router-outlet></router-outlet>
-  <!-- Footer> -->
-  <!-- ------------------------------------------------------------------------------------------------------------------------------- -->
-  <footer class="bg-main footer xl:pb-20 pb-[20px] pt-[20px] lg:px-20 px-[10px] text-base-content">
-    <nav>
-      <h6 class="footer-title">Giới Thiệu</h6>
-      <a class="link link-hover">Về Chúng Tôi</a>
-      <a class="link link-hover">Liên Hệ</a>
-    </nav>
-    <nav>
-      <h6 class="footer-title">Hệ Thống Cửa Hàng</h6>
-      <a class="link link-hover">Tin Khuyến Mãi</a>
-      <a class="link link-hover">Tin Tuyển Dụng</a>
-    </nav>
-    <nav>
-      <h6 class="footer-title">Điều Khoản & Chính Sách</h6>
-      <a class="link link-hover">Điều Khoản Sử Dụng</a>
-      <a class="link link-hover">Chính Sách Bảo Mật</a>
-      <a class="link link-hover">Chính Sách Cookie</a>
-    </nav>
-
-    <form >
-      <h1 class="footer-title">Liên Hệ</h1>
-      <div class="flex  border-[1px] rounded-[10px] overflow-hidden">
-        <input class=" font-light p-3 focus:outline-none" type="email" placeholder="Nhập email của bạn">
-        <button class="font-semibold p-3 bg-green-700 text-white focus:outline-none" type="submit">Đồng Ý</button>
-      </div>
-    </form>    
-
-  </footer>
+  <section>
+    <div class="infomation_web">
+        <div class="info_admin">
+            <img src="./assets/products/user_web-removebg.png" alt="" width="200px">
+            <div class="content_info">
+                <p class="p1">DUY BÌNH<br>0889020487</p>
+                <p class="mail_admin">binhddps29132&#64;fpt.edu.vn</p> 
+            </div>
+            
+        </div>
+        <div class="info_web">
+            <img src="./assets/products/user_web-removebg.png" alt="" width="200px">
+            <div class="content_info">
+                <p class="p1">LAUGHLINES<br>0889020487</p>
+                <p class="mail_admin">laughlines&#64;gmail.com</p> 
+            </div>
+        </div>
+    </div>
+</section>
+  <footer class="footer-main">
+    <div class="logofooter">
+        <img src="./assets/products/Capture.PNG" alt=""> <br>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62705.160139741514!2d106.61678612127228!3d10.805758587537362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529292e8d3dd1%3A0xf15f5aad773c112b!2zVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1705230727825!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="info">
+        <ul>
+            <h3>LaughLines</h3>
+            <li>Trang Chủ</li>
+            <li>Giới Thiệu</li>
+            <li>Sản Phẩm</li>
+            <li>Liên Hệ & Hỗ Trợ</li>
+        </ul>
+    </div>
+    <div class="info">
+        <ul>
+            <h3>Về Chúng Tôi</h3>
+            <li>Thương Hiệu : LaughLines</li>
+            <li>Địa Chỉ : Q.Gò Vấp, TP.HCM</li>
+            <li>Hotline : 0889020487</li>
+            <li>Email : laughlines&#64;gmail.com</li>
+        </ul>
+    </div>
+    <div class="info">
+        <ul>
+            <h3>Hỗ Trợ Khách Hàng</h3>
+            <li>Vận Chuyển Hàng</li>
+            <li>Thanh Toán Trực Tuyến</li>
+            <li>Bảo Mật Thông Tin</li>
+            <li>Thông Tin Sản Phẩm</li>
+        </ul>
+    </div>
+</footer> 
+<hr>
+    <div class="byme"> <p>Copyright © 2024 <a href="index.html">LaughLines</a>. Powered by Dawn</p></div>
 
 </body>
-
+<script src="./assets/js/product.js"></script>
+<script>
+var cart = JSON.parse(localStorage.getItem('cart')) || [];
+displayCart(cart);
+cart.push(product);
+localStorage.setItem('cart', JSON.stringify(cart));
+window.location.href = 'cart.html';
+</script>
 </html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaughLines</title>
+    <link rel="shortcut icon" href="img/Capture.PNG" type="image/png">
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
+    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    margin-top: 20px;
+    text-align: center;
+    
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 300px 500px 140px 40px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.logo img {
+    max-width: 300px;
+    height: auto;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 400px;
+    border: 3px solid black;
+    line-height: 30px;
+   
+}
+.search span {
+    font-size: 24px;
+    padding: 10px;
+    line-height: 15px;
+    border: 3px solid black;
+}
+.search button {
+    line-height: 1px;
+    padding: 5px;
+    background-color: #ffffff;
+    color: #b60c06;
+    cursor: pointer;
+    border: 3px solid black;
+    border-radius: 3px;
+} 
+.search button:hover {
+    /* background-color: black; */
+    color:  #d8d3d3;
+}
+.cart  span,.login  span {
+    font-size: 24px;
+    background: black;
+    background-color: #e0dddd;
+    border: 3px solid black;
+    border-radius: 40px;
+    margin-right: 10px;
+    padding: 10px;
+    line-height: 20px;
+}
+.cart p{
+    position: absolute;
+    font-size: 20px;
+    line-height: 15px;
+    padding: 5px;
+    margin: -50px 0px 0px 35px;
+    background-color: rgb(255, 0, 0);
+    color: aliceblue;
+    border-radius: 10px;
+}
+.phone{
+    display: grid;
+    grid-template-columns: 40px 100px;
+
+}
+.hotline{
+    color: #e0352f;
+}
+nav {
+    /* background-color: #ff0909a8; */
+    color: white;
+    padding: 1px;
+    text-align: center;
+    border-bottom: 1px gray solid;
+    border-top: 1px gray solid;
+}
+
+nav ul {
+    list-style: none;
+    display: flex; 
+    justify-content: center;
+    /* padding: 0; */
+}
+
+nav ul li {
+    margin-right: 100px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #05a2fdc7;
+}
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.image-gallery img{
+    width: 100%;
+}
+.material-icons{
+    color: black;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.bnr1{
+    display: grid;
+    grid-template-columns: 800px 400px;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    
+}
+.bnr1 img{
+    border: 2px solid rgb(233, 230, 230);
+    border-radius: 5px;
+    width: 100%;
+}
+.bn3 img{
+    height: 108px;
+}
+</style>
+<body>
+
+    <header>
+        <div class="header">
+            <div class="logo">
+                <a href="index.html"><img src="img/Capture.PNG" alt="Logo"></a>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Tìm Kiếm Tại Đây..." required>
+                <button type="submit"><img src="img/search.png" alt="" width="35px"></button>
+            </div>
+            <div class="phone">
+                <div>
+                    <i ><img src="img/phone.png" width="40px"></i> <br>
+                </div>
+                <div class="hotline">
+                    <b>HOTLINE</b>
+                    <em> 889020487</em>
+                </div>
+            </div>
+            <div class="login">
+                <a href="login.html">
+                    <img src="img/user.png" height="40px">
+                </a>
+            </div>
+            <div class="cart">
+                <a href="#">
+                    <img src="img/cart.jpg" height="40px" onclick="showcart()">
+                </a>
+                <p id="count">0</p>
+            </div>
+            <!-- <div class="show_cart" id="cart1">
+                <center>
+                    <h2>Giỏ Hàng Của Bạn</h2>
+                    <h3 id="cartItem"></h3>
+                </center>
+                <div class="cartdetail">
+                    <table> -->
+                        <!-- <tr>
+                            <th>Sản Phẩm</th>
+                            <th>Hình</th>
+                            <th>Số Lượng</th>
+                            <th>Giá</th>
+                            <th>Xóa</th>
+                        </tr> -->
+                        <!-- <tbody id="pro_cart" class="table_tbody"> -->
+                            <!-- <tr>
+                                <td>Sticker 1</td>
+                                <td><img src="img/sp1.webp" alt="" width="100px" height="auto"></td>
+                                <td><input type="number" value="1" min="1" max=""></td>
+                                <td>19,000 đ</td>
+                                <td><img src="img/delete.png" alt="" width="20px" height="auto"></td>
+                            </tr>-->
+                        <!-- </tbody>
+                    </table>
+                </div>
+                <div class="show_proCart">
+                    <p class="cart_sum"><b class="text_sum">Tổng Tiền:</b><span id="sum_cart"></span></p>
+                    <hr class="hr">
+                    <button class="view_cart" ><a href="cart.html" class="">CHI TIẾT GIỎ HÀNG</a></button><br> 
+                </div> -->
+                
+            </div>
+        </div>
+    </header>
+    <br>
+    <nav>
+        <ul>
+            <li><a href="index.html">TRANG CHỦ</a></li>
+            <li><a href="about.html">GIỚI THIỆU</a></li>
+            <li><a href="products.html">SẢN PHẨM</a></li>
+            <li><a href="contact.html">LIÊN HỆ & HỖ TRỢ</a></li>
+        </ul>
+    </nav>
+    <main>
+       <div class="bnr1">
+            <div class="bn2">
+                <img src="img/Chào Mừng Đến.png" alt="" width="800px">
+            </div>
+            <div class="bn3">
+                <img src="img/Chào Mừng Đến.png" alt="" width="400px">
+                <br>
+                <img src="img/Chào Mừng Đến.png" alt="" width="400px">
+            </div>
+       </div>
+        
+<script src="js/product.js"></script>
+<script>
+    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+    displayCart(cart);
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.href = 'cart.html';
+</script>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<style>
+    .form_register{
+        display: grid;
+        grid-template-columns: 400px 300px;
+        justify-content: center;
+        align-items: center; 
+        margin-top: 100px;
+        padding: 0;
+        height: 100%;
+    }
+    .img_register>img{
+        margin-top: 4px;
+        width: 300px;
+        height: 550px;
+        margin-left: -37px;
+        border : 3px solid #000000;
+        object-fit: cover;
+    }
+    .box form{
+        max-width: 300px;
+        height: 100%;
+        align-content: center;
+        border : 3px solid #000000;
+        padding:  30px;
+        background-color: rgb(255, 255, 255);
+    }
+    label,h3,input,button,b{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    h3{
+        color: #000000;
+        font-size: 40px;
+        box-shadow: inset;
+        filter: drop-shadow(2px 2px 4px #59caff);
+    }
+    label{
+        float: left;
+        padding: 10px;
+    }
+    input{
+       width: 270px;
+       height: 30px;
+       margin: auto;
+       border : 3px solid rgb(0, 0, 0);
+    }
+    .kw{
+        padding: 5px;
+    }
+    .look{
+      width: 20px;
+      height: 12px;
+      margin-bottom: 20px;
+    }
+    button{
+        width: 270px;
+        height: 30px;
+        /* background-color: black; */
+        background: #000000;
+        color: aliceblue;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    }
+    .register{
+        margin: 5px;
+    }
+    .register:hover{
+        background-color: rgb(78, 78, 78);
+    }
+    button,input{
+        border-radius: 10px;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+</style>
+<body>
+    <div class="form_register">
+        <div class="box">
+            <form action=""  class="box" name="myF">
+                <h3>ĐĂNG KÝ</h3>
+                <label for="" name="name"><b>Name</b></label><br>
+                <input type="name" class="kw" placeholder="Name" id="name">
+                <label for="" name="email"><b>Email</b></label><br>
+                <input type="email" class="kw" placeholder="Email" id="email">
+                <label for="" name="pass"><b>Password</b></label><br>
+                <input type="password" class="kw"  placeholder="Password" id="pass"> <br><br>
+                <input type="checkbox" class="look" onclick="lookpass()"><b>Hiện Thị Mật Khẩu </b><br>
+                <button type="button" class="register" ><a href="login.html"><b>ĐĂNG NHẬP</b></a></button>
+           </form>
+        </div>
+        <div class="img_register">
+            <img src="img/banner_form.jpg" alt="">
+        </div>
+    </div>
+     
+     <script src="js/register.js"></script>
+</body>
+</html>

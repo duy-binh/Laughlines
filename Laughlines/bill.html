@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaughLines</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<!-- <style>
+    /* css bill */
+   .box-bill a{
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease-in-out;
+    font-weight: bolder;
+   }
+   .box-bill a:hover{
+    color: #e0352f;
+   }
+   .infomation{
+    height: 200px;
+   }
+   .box-bill thead{
+    background-color: beige;
+   }
+  .box-bill,.infomation{
+    display: grid;
+    grid-template-columns: 400px 800px;
+    gap: 20px;
+    justify-content: center;
+    padding: 1%;
+  } 
+  /* .img-user img{
+    border-radius: 20%;
+    width: 200px;
+  } */
+  .box-bill li, .infomation li{
+    list-style: none;
+    line-height: 24px;
+    font-size: 16px;
+    padding: 3%;
+  }
+  .list-info{
+    position: relative;
+    border: 1px rgb(179, 179, 179) solid;
+    height: 210px;
+  }
+  .box-bill .table-bill button{
+    float: right;
+    padding: 8px;
+    background-color: rgb(39, 143, 204);
+    color: aliceblue;
+    font-size: 14px;
+    border: 3px solid white;
+    border-radius: 5px;
+  }
+  .box-bill .table-bill button:hover{
+    background-color: rgb(20, 112, 165);
+  }
+</style> -->
+<body>
+
+    <header>
+        <div class="header">
+            <div class="logo">
+                <a href="index.html"><img src="img/Capture.PNG" alt="Logo"></a>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Tìm Kiếm Tại Đây..." required>
+                <button type="submit"><img src="img/search.png" alt="" width="35px"></button>
+            </div>
+            <div class="phone">
+                <div>
+                    <i ><img src="img/phone.png" width="40px"></i> <br>
+                </div>
+                <div class="hotline">
+                    <b>HOTLINE</b>
+                    <em> 889020487</em>
+                </div>
+            </div>
+            <div class="login">
+                <a href="login.html">
+                    <img src="img/user.png" height="40px">
+                </a>
+            </div>
+            <div class="cart">
+                <a href="#">
+                    <img src="img/cart.jpg" height="40px" onclick="showcart()">
+                </a>
+                <p id="count">0</p>
+            </div>
+            <div class="show_cart" id="cart1">
+                <center>
+                    <h2>Giỏ Hàng Của Bạn</h2>
+                    <h3 id="cartItem"></h3>
+                </center>
+                <div class="cartdetail">
+                    <table>
+                        <!-- <tr>
+                            <th>Sản Phẩm</th>
+                            <th>Hình</th>
+                            <th>Số Lượng</th>
+                            <th>Giá</th>
+                            <th>Xóa</th>
+                        </tr> -->
+                        <tbody id="pro_cart" class="table_tbody">
+                            <!-- <tr>
+                                <td>Sticker 1</td>
+                                <td><img src="img/sp1.webp" alt="" width="100px" height="auto"></td>
+                                <td><input type="number" value="1" min="1" max=""></td>
+                                <td>19,000 đ</td>
+                                <td><img src="img/delete.png" alt="" width="20px" height="auto"></td>
+                            </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="show_proCart">
+                    <p class="cart_sum"><b class="text_sum">Tổng Tiền:</b><span id="sum_cart"></span></p>
+                    <hr class="hr">
+                    <button class="view_cart" ><a href="cart.html" class="">CHI TIẾT GIỎ HÀNG</a></button><br> 
+                </div>
+                
+            </div>
+        </div>
+    </header>
+    <br>
+    <nav>
+        <ul>
+            <li><a href="index.html">TRANG CHỦ</a></li>
+            <li><a href="about.html">GIỚI THIỆU</a></li>
+            <li><a href="products.html">SẢN PHẨM</a></li>
+            <li><a href="contact.html">LIÊN HỆ & HỖ TRỢ</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- <div class="infomation">
+            <div class="img-user">
+                <img src="img/sp1.1.webp" alt="">
+            </div>
+            <div class="info-user">
+                <ul>
+                    <li>XIN CHÀO !</li>
+                    <li>Nguyễn Văn B</li>
+                </ul>
+            </div>
+        </div> -->
+        
+        <div class="box-bill">
+            <div class="list-info">
+                <ul>
+                    <li><a href="#">THÔNG TIN TÀI KHOẢN</a></li>
+                    <li><a href="#">THAY ĐỔI THÔNG TIN</a></li>
+                    <li><a href="#">LỊCH SỰ ĐẶT HÀNG</a></li>
+                    <li><a href="index.html">ĐĂNG XUẤT</a></li>
+                </ul>
+            </div>
+            <div class="table-bill">
+                <p>Lịch Sự Đặt Hàng</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>MÃ</th>
+                            <th>NGÀY ĐẶT</th>
+                            <th>HÌNH</th>
+                            <th>SẢN PHẨM</th>
+                            <th>PTTT</th>
+                            <th>TỔNG</th>
+                        </tr>
+                    </thead>
+                   
+                    <tbody>
+                        <tr id="show-bill">
+                            <tr>
+                                <td>1</td>
+                                <td>SK001</td>
+                                <td>23/04/2024</td>
+                                <td><img src="img/sp1.1.webp" alt="" width="100wh"></td>
+                                <td>STICKER 1 <b>SL:2</b></td>
+                                <td>CHUYỂN KHOẢN</td>
+                                <td>38000 VND</td>
+                            </tr>
+                            <tr>
+                                <td colspan="100%">
+                                    <button type="button">Xem Chi Tiết</button> 
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>SK002</td>
+                                <td>23/04/2024</td>
+                                <td><img src="img/sp2.webp" alt="" width="100wh"></td>
+                                <td>STICKER 2 <b>SL:1</b></td>
+                                <td>THANH TOÁN KHI NHẬN HÀNG</td>
+                                <td>19000 VND</td>
+                            </tr>
+                            <tr>
+                                <td colspan="100%">
+                                    <button type="button">Xem Chi Tiết</button> 
+                                </td>
+                            </tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <hr>
+    <footer class="footer-main">
+        <div class="logofooter">
+            <img src="img/Capture.PNG" alt=""> <br>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62705.160139741514!2d106.61678612127228!3d10.805758587537362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529292e8d3dd1%3A0xf15f5aad773c112b!2zVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1705230727825!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="info">
+            <ul>
+                <h3>LaughLines</h3>
+                <li>Trang Chủ</li>
+                <li>Giới Thiệu</li>
+                <li>Sản Phẩm</li>
+                <li>Liên Hệ & Hỗ Trợ</li>
+            </ul>
+        </div>
+        <div class="info">
+            <ul>
+                <h3>Về Chúng Tôi</h3>
+                <li>Thương Hiệu : LaughLines</li>
+                <li>Địa Chỉ : Q.Gò Vấp, TP.HCM</li>
+                <li>Hotline : 0889020487</li>
+                <li>Email : laughlines@gmail.com</li>
+            </ul>
+        </div>
+        <div class="info">
+            <ul>
+                <h3>Hỗ Trợ Khách Hàng</h3>
+                <li>Vận Chuyển Hàng</li>
+                <li>Thanh Toán Trực Tuyến</li>
+                <li>Bảo Mật Thông Tin</li>
+                <li>Thông Tin Sản Phẩm</li>
+            </ul>
+        </div>
+    </footer> 
+    <hr>
+        <div class="byme"> <p>Copyright © 2024 <a href="index.html">LaughLines</a>. Powered by Dawn</p></div>
+    
+</body>
+<script src="js/product.js"></script>
+<script>
+    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+    displayCart(cart);
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.href = 'cart.html';
+</script>
+</html>

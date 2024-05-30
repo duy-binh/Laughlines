@@ -1,10 +1,11 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { Products } from '../../common/product';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-shop',
   standalone: true,
-  imports: [HttpClientModule,],
+  imports: [HttpClientModule, CommonModule],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css'
 })
